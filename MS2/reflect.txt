@@ -1,0 +1,68 @@
+// ===================================================================================
+//  Assignment: 2
+//  Milestone : 2
+// ===================================================================================
+//  Student Name  : Mohammadhossein Sobhanmanesh
+//  Student ID    : 116523200
+//  Student Email : msobhanmanesh@myseneca.ca
+//  Course Section: IPC-NGG
+// ===================================================================================
+
+1)
+My favorite string function from the string library is strcmp which I used to 
+compare strings together. It helps me to check if the string which I type and 
+store in the local variable is similar to the intended string which is stored 
+instructs. A place that I used is to check if is bad attempt happened for login 
+menu 
+
+ getCString(aLine, 1, 99);
+    if (*index >= 0)
+    {
+        if (strcmp(aLine, data->accounts[*index].userLogin.userLoginName))
+        {
+            badAttempt = 1;
+        }
+    }
+
+void displayTicketHeader(void);
+For showing the header title related to tickets 
+
+void displayOneTicketRecord(const Ticket *ticket);
+ 
+ 
+For showing just one row of Ticket Status, Subject, and message related to 
+ticket and customer
+
+void displayAllTicketsForAccount(const struct AccountTicketingData *data, int 
+accountNum);
+I used this function for calling displayTicketHeader and data which is worked 
+with a loop for customer menu
+
+void displayMessage(const Ticket *ticket);
+For showing the head and related details for existing massages for customer menu
+
+void displayAgentMessageHeader();
+For showing the related header for showing the massages for the agent menu.
+
+void displayOneTicketRecordAgent(const Ticket *ticket);
+It is used for showing one row of data related to the agent massage menu.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

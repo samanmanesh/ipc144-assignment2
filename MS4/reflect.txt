@@ -1,0 +1,107 @@
+// ===================================================================================
+//  Assignment: 2
+//  Milestone : 4
+// ===================================================================================
+//  Student Name  : Mohammadhossein Sobhanmanesh
+//  Student ID    : 116523200
+//  Student Email : msobhanmanesh@myseneca.ca
+//  Course Section: IPC-NGG
+// ===================================================================================
+
+1)
+a)commonHelpers.h
+
+Void copy(char *input, char *cStringValue);
+
+b)account.h
+void updateAccount(Account *account);
+ 
+// Updating UserLogin
+void updateUserLogin(UserLogin *userlogin);
+ 
+// Updating Demographic
+void updateDemographic(Demographic *demographic);
+ 
+// Get and validate password for having 2 of each
+void getAndValidatePassword(UserLogin *userLogin);
+ 
+// Convert lowe letters to Upper letters
+void lowerToUpperConverter(Demographic *demographic);
+ 
+void displayAllAccountSummaryRecords(const Account *account, int size);
+ 
+void displayAllAccountDetailRecords(const Account *account, int size);
+ 
+void viewArchivedAccountStatistics();
+ 
+int savingAccountChanges(struct Account *accounts, int sizeAccount);
+
+
+c)ticket.h
+
+void updateTicket(Ticket *ticket, const struct Account account);
+ 
+void updateTicketAgent(Ticket *ticket, const struct Account account);
+ 
+void addAMessage(Ticket *ticket, const struct Account account);
+ 
+void displayOneTicketRecordAgent(const Ticket *ticket);
+ 
+int archiveClosedTickets(Ticket *ticket, int ticketMaxSize);
+ 
+int saveTickets(Ticket *tickets, int maxArraySize);
+ 
+void viewArchivedTicketStatus();
+ 
+int savingTicketChanges(struct Ticket *tickets, int maxArraySize);
+
+
+
+d)accountTicketingUI.h
+
+int findAccountIndexByAcctNum(int acctNum, const Account accounts[], int size, int prompt);
+ 
+int isBadAttempt(const struct AccountTicketingData *data, int *index);
+ 
+//
+void displayTicketHeader(void);
+ 
+//
+void displayOneTicketRecord(const Ticket *ticket);
+ 
+//
+void applicationStartup(struct AccountTicketingData *acctTData);
+ 
+//
+void displayAllTicketsForAccount(const struct AccountTicketingData *data, int accountNum);
+ 
+//
+void displayMessage(const Ticket *ticket);
+ 
+//
+void displayAgentMessageHeader();
+
+void archiveCloseTicketsForAccount(struct AccountTicketingData *acctAndTicket, Account *relatedTicket);
+ 
+void closingTicketsForAccount(struct AccountTicketingData *acctAndTicket, Account *relatedTicket);
+ 
+void archiveRemovedAccount(struct AccountTicketingData *acctAndTicket, Account *relatedAccount);
+
+
+2) The two major components which I found interesting were displaying the 
+details of customer and agents in table format and also validating the password 
+at the beginning of the program. However, they contain different functions that 
+sometimes I had to change some of them to get the expected result. Displaying .
+the number of accounts, tickets, and other related data to the account needs to 
+point to the exact variable or array inside the structs. For validating the 
+password and username the fact that we would not show how many words or numbers 
+are required for the password was and interesting for me but comparing the 
+input with the correct result was a little tricky.  
+
+
+3) The two major components which I didn’t like to develop were loading and 
+writing data to and from files. I wasn’t fine with that because each text file 
+has to load at first and an update after logging into the system so it must 
+rewrite all the changes during the progress. Referring to each exact and 
+keeping order based on the text file and related structs in the program is so 
+confusing and time-consuming especially tickets.txt which has messages. 
